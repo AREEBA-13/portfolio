@@ -91,7 +91,7 @@ const projects: Project[] = [
         image: "https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800&q=80",
         tech: ["React", "Express", "REST APIs"],
         github: "https://github.com/AREEBA-13/RecipeFinder",
-        live: "#",
+        live: "https://lnkd.in/deMrgDiy",
         builtOn: "Dec 2025",
         featured: false
     },
