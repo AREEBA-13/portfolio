@@ -24,6 +24,31 @@ type Project = {
 
 const projects: Project[] = [
     {
+        id: 11,
+        title: "NutriAi",
+        description: "A full-stack machine learning health dashboard classifying recipe healthiness and recommending custom diets.",
+        longDescription: "NutriAi is an intelligent health classification and food recommendation system. Powered by a React/Vite dashboard client and a Flask API backend hosted on Hugging Face Spaces, it classifies recipe health profiles using machine learning (KNN, SVM, Naive Bayes) according to WHO guidelines. It also offers personalized diet suggestions powered by KNN similarity calculations on a 2,500+ USDA item dataset, alongside Firebase Cloud Firestore synchronization for user metrics and profiles.",
+        image: "/nutri_ai.png",
+        tech: ["React", "Flask", "Python", "Scikit-Learn", "Firebase", "Hugging Face"],
+        github: "https://github.com/AREEBA-13/NutriAi.git",
+        live: "https://nutri-nr1gr4kc2-areebas-projects-8af046df.vercel.app/",
+        builtOn: "May 2026",
+        featured: true
+    },
+    {
+        id: 10,
+        title: "Quiz Master",
+        description: "A full-stack Flutter mobile quiz application integrated with Firebase and Groq AI.",
+        longDescription: "Quiz Master is a high-performance, full-stack mobile application that gamifies the learning experience. Integrated with Firebase for secure, real-time user authentication and Cloud Firestore to manage dynamic question banks, quiz categories, and instant score updates. It features advanced Groq AI integration to deliver real-time, AI-powered answer explanations and hints, alongside rich gameplay feedback and custom profile management.",
+        image: "/quiz_master.jpg",
+        tech: ["Flutter", "Dart", "Firebase", "Firestore", "Groq AI", "State Management"],
+        github: "https://github.com/AREEBA-13/Quiz_Master.git",
+        live: null,
+        download: "https://github.com/AREEBA-13/Quiz_Master/releases",
+        builtOn: "April 2026",
+        featured: true
+    },
+    {
         id: 1,
         title: "Catalog App",
         description: "A cross-platform product catalog mobile application with seamless categorization.",
@@ -50,14 +75,14 @@ const projects: Project[] = [
     {
         id: 3,
         title: "AI ChatBot",
-        description: "An intelligent conversational agent built natively for seamless mobile interaction.",
-        longDescription: "A Flutter-based chatbot application that acts as a smart assistant. It integrates with real-time backend databases to deliver dynamic, on-the-fly conversational flows.",
+        description: "A real-time, AI-integrated mobile and web conversational assistant built with Flutter.",
+        longDescription: "AI ChatBot is an intelligent, high-performance conversational assistant that utilizes generative AI to answer user queries dynamically. Upgraded from hardcoded templates, it now handles multi-turn conversations, processes context-aware responses natively on both mobile and web platforms, and features slick chat bubbles, typing indicator animations, and complete message histories.",
         image: "/chatbbot.png",
-        tech: ["Flutter", "Dart", "API Integration"],
-        github: "https://github.com/AREEBA-13/My_ChatBot_Flutter",
-        live: null,
-        builtOn: "Jul 2025",
-        featured: false
+        tech: ["Flutter", "Dart", "Generative AI", "API Integration", "Web Build"],
+        github: "https://github.com/AREEBA-13/My_ChatBot_Flutter.git",
+        live: "https://areeba-13.github.io/My_ChatBot_Flutter/",
+        builtOn: "May 2026",
+        featured: true
     },
     {
         id: 4,
@@ -101,7 +126,7 @@ const projects: Project[] = [
         description: "A comprehensive health and diet tracking platform to monitor meals.",
         longDescription: "DietoSphere empowers users to take control of their nutritional health. With macros tracking, diet planners, and a clean minimalist UI, it creates a personal wellness bubble.",
         image: "/dietosphere.png",
-        tech: ["TypeSript", "JavaScript", "TailwindCSS"],
+        tech: ["TypeScript", "JavaScript", "TailwindCSS"],
         github: "https://github.com/AREEBA-13/DietoSphere",
         live: "https://dieto-sphere.vercel.app/",
         builtOn: "Nov 2025",
@@ -114,9 +139,9 @@ const projects: Project[] = [
         longDescription: "Tasty Track is your personal mobile food diary. Designed entirely in Flutter, it provides a seamless logging experience for users to journal meals, track habits, and rate dishes instantly.",
         image: "/tastytrack.png",
         tech: ["Flutter", "Dart", "Firebase"],
-        github: "https://github.com/AREEBA-13/tasty_track_flutter",
+        github: "https://github.com/AREEBA-13/tasty_track_flutter.git",
         live: null,
-        download: "/tasty_track.apk",
+        download: "https://github.com/AREEBA-13/tasty_track_flutter/releases",
         builtOn: "Aug 2025",
         featured: false
     },
@@ -139,11 +164,11 @@ export default function Projects() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextProject = () => {
-        if (currentIndex < projects.length - 1) setCurrentIndex(prev => prev + 1);
+        if (currentIndex < projects.length - 1) setCurrentIndex(currentIndex + 1);
     };
 
     const prevProject = () => {
-        if (currentIndex > 0) setCurrentIndex(prev => prev - 1);
+        if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
     };
 
     useEffect(() => {
@@ -213,7 +238,7 @@ export default function Projects() {
                                                 <img
                                                     src={project.image}
                                                     alt={project.title}
-                                                    className="object-contain w-full h-full p-4 drop-shadow-[0_0_20px_rgba(255,255,255,0.1)] transform transition-transform duration-700 group-hover:scale-105"
+                                                    className="object-cover w-full h-full drop-shadow-[0_0_20px_rgba(255,255,255,0.1)] transform transition-transform duration-700 group-hover:scale-105"
                                                 />
                                             </div>
 
@@ -300,12 +325,12 @@ export default function Projects() {
                             >
                                 {projects.filter(p => p.id === selectedId).map(project => (
                                     <div key={project.id} className="flex flex-col">
-                                        <div className="relative w-full h-64 md:h-[28rem] bg-[#111] dark:bg-white/5 flex items-center justify-center p-8">
+                                        <div className="relative w-full h-64 md:h-[28rem] bg-[#111] dark:bg-white/5 flex items-center justify-center overflow-hidden rounded-t-3xl">
                                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                                            <img src={project.image} alt={project.title} className="object-contain w-full h-full drop-shadow-2xl" />
+                                            <img src={project.image} alt={project.title} className="object-cover w-full h-full drop-shadow-2xl" />
                                             <button
                                                 onClick={() => setSelectedId(null)}
-                                                className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/80 text-white rounded-full backdrop-blur-md transition-colors"
+                                                className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/80 text-white rounded-full backdrop-blur-md transition-colors z-20"
                                             >
                                                 <X size={24} />
                                             </button>
