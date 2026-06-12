@@ -44,7 +44,7 @@ export default function About() {
                             <User className="text-primary" /> The Journey
                         </h3>
                         <p className="text-lg text-foreground/80 leading-relaxed mb-6 text-balance">
-                            I am a dedicated Computer Science student with a strong passion for learning and problem-solving. My academic journey combines theoretical knowledge with practical experience, helping me understand how to design effective solutions for real-world challenges.
+                            I am a dedicated Computer Science student with a strong passion for learning and problem solving. My academic journey combines theoretical knowledge with practical experience, helping me understand how to design effective solutions for real-world challenges.
                             I have built a solid foundation in key areas which has strengthened my analytical thinking and approach to complex problems.
                         </p>
                         <p className="text-lg text-foreground/80 leading-relaxed text-balance">
